@@ -10,7 +10,9 @@ const config = {
 const generateJWT = (email) => {
   const payload = { email };
 
-  const token = jwt.sign(payload, JWT_SECRET, config);
+  const token = {
+    token: jwt.sign(payload, JWT_SECRET, config),
+  };
 
   return token;
 };
