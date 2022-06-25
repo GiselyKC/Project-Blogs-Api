@@ -12,7 +12,6 @@ module.exports = {
       displayName: {
         type: Sequelize.STRING(255),
         allowNull: false,
-        unique: true
       },
       email: {
         type: Sequelize.STRING(255),
