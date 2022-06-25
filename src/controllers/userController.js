@@ -17,7 +17,6 @@ const userGet = async (_req, res) => {
 
 const userGetById = async (req, res) => {
   const { id } = req.params;
-  console.log(id, 'idcontroller');
   const teste = await userGetByIdService(id);
 
   return res.status(200).json(teste);
