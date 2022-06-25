@@ -11,15 +11,15 @@ const userPost = async (req, res) => {
 };
 
 const userGet = async (_req, res) => {
-  const teste = await userGetService();
-  return res.status(200).json(teste);
+  const user = await userGetService();
+  return res.status(200).json(user);
 };
 
 const userGetById = async (req, res) => {
   const { id } = req.params;
-  const teste = await userGetByIdService(id);
+  const userId = await userGetByIdService(id);
 
-  return res.status(200).json(teste);
+  return res.status(200).json(userId);
 };
 
 module.exports = {
