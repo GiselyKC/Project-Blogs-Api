@@ -13,6 +13,14 @@ const userPostService = async (displayName, email, password, image) => {
   return userCreatePost;
 };
 
+const userGetService = async () => {
+  const users = await User.findAll({
+    attributes: ['id', 'displayName', 'email', 'image'],
+  });
+  return users;
+};
+
 module.exports = {
   userPostService,
+  userGetService,
 };
