@@ -2,7 +2,7 @@ const express = require('express');
 const loginController = require('./controllers/loginController');
 const { userPost, userGet, userGetById } = require('./controllers/userController');
 const { categoryPost, categoryGet } = require('./controllers/categoriesController');
-const { postPost, postGet } = require('./controllers/postController');
+const { postPost, postGet, postGetById } = require('./controllers/postController');
 const validateLogin = require('./middlewares/loginMiddleware');
 const {
   validateDisplayName,
@@ -23,5 +23,6 @@ routers.post('/categories', authMiddleware, validateName, categoryPost);
 routers.get('/categories', authMiddleware, categoryGet);
 routers.post('/post', authMiddleware, validatePost, validateCategoryIds, postPost);
 routers.get('/post', authMiddleware, postGet);
+routers.get('/post/:id', authMiddleware, postGetById);
 
 module.exports = routers;
